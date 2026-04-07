@@ -1,16 +1,18 @@
 // vars
 $primary-color: #0a725c;
 $primary-dark: #085d4a;
-$accent-color: #9c0000;
+$accent-color: #4be464;
 $text-light: #ffffff;
 $shadow-color: rgba(0, 0, 0, 0.15);
 $transition-speed: 0.3s;
 
 // Navbar Principal
 .navbar {
-  background: linear-gradient(135deg, $primary-color 0%, $primary-dark 100%);
-  box-shadow: 0 2px 12px $shadow-color;
-  height: 76px;
+  background: rgba(10, 114, 92, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08), 0 4px 20px rgba(0, 0, 0, 0.2);
+  height: 68px;
   padding: 0 !important;
   position: sticky;
   top: 0;
@@ -23,8 +25,9 @@ $transition-speed: 0.3s;
   justify-content: space-between;
   height: 100%;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 28px;
   width: 100%;
+  max-width: 1400px;
 }
 
 // Logo
@@ -48,36 +51,26 @@ $transition-speed: 0.3s;
 }
 
 .logo-text {
-  font-size: 28px;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 700;
   color: $text-light;
-  letter-spacing: 0.5px;
+  letter-spacing: -0.3px;
   position: relative;
+  transition: opacity $transition-speed ease;
 
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 3px;
-    background: $accent-color;
-    transition: width $transition-speed ease;
-  }
-
-  &:hover::after {
-    width: 100%;
+  &:hover {
+    opacity: 0.9;
   }
 
   @media (max-width: 768px) {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 
 // Botões Desktop
 .nav-links {
   display: flex;
-  gap: 8px;
+  gap: 4px;
 
   @media (max-width: 768px) {
     display: none;
@@ -88,16 +81,17 @@ $transition-speed: 0.3s;
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 24px;
-  color: $text-light;
+  padding: 10px 18px;
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-weight: 500;
+  font-size: 14px;
   transition: all $transition-speed ease;
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-    transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.12);
+    color: $text-light;
   }
 }
 
@@ -112,8 +106,10 @@ $transition-speed: 0.3s;
   width: 100%;
   max-height: 0;
   overflow: hidden;
-  background: linear-gradient(180deg, $primary-color 0%, $primary-dark 100%);
-  box-shadow: 0 4px 12px $shadow-color;
+  background: rgba(8, 93, 74, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   transition: max-height $transition-speed ease;
 
   @media (min-width: 769px) {
@@ -128,19 +124,20 @@ $transition-speed: 0.3s;
 .mobile-nav {
   display: flex;
   flex-direction: column;
-  padding: 12px 0;
+  padding: 8px 0;
 }
 
 .mobile-nav-item {
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 16px 24px;
-  color: $text-light;
+  padding: 14px 24px;
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   font-weight: 500;
+  font-size: 15px;
   border-left: 3px solid transparent;
-  transition: background-color $transition-speed ease;
+  transition: background-color $transition-speed ease, color $transition-speed ease;
 
   mat-icon {
     font-size: 24px;
@@ -149,8 +146,9 @@ $transition-speed: 0.3s;
   }
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.08);
     border-left-color: $accent-color;
+    color: $text-light;
   }
 }
 
@@ -160,7 +158,7 @@ $transition-speed: 0.3s;
   gap: 4px;
   margin-left: 16px;
   padding-left: 16px;
-  border-left: 1px solid rgba(255, 255, 255, 0.25);
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
 
   @media (max-width: 768px) {
     display: none;
@@ -170,24 +168,26 @@ $transition-speed: 0.3s;
 // Link ativo - Desktop
 .nav-item.nav-active {
   background-color: rgba(255, 255, 255, 0.15);
+  color: $text-light;
   position: relative;
 
   &::after {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 12px;
-    right: 12px;
-    height: 3px;
+    left: 10px;
+    right: 10px;
+    height: 2px;
     background: $accent-color;
-    border-radius: 3px 3px 0 0;
+    border-radius: 2px 2px 0 0;
   }
 }
 
 // Link ativo - Mobile
 .mobile-nav-item.nav-active {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.08);
   border-left-color: $accent-color;
+  color: $text-light;
 }
 
 // Responsividade
@@ -197,11 +197,11 @@ $transition-speed: 0.3s;
   }
 
   .logo-text {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .mobile-nav-item {
-    padding: 14px 20px;
+    padding: 12px 20px;
     font-size: 14px;
   }
 }

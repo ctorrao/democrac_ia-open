@@ -12,14 +12,45 @@ body {
   overflow-x: hidden;
 }
 
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Improved scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Selection color */
+::selection {
+  background: rgba(75, 228, 100, 0.3);
+  color: #ffffff;
+}
+
 body::after {
   content: "";
   position: fixed;
   inset: 0;
   background: linear-gradient(
-    180deg,
-    #1f2d4e 0%,
-    #1f2d4d 50%,
+    160deg,
+    #0f172a 0%,
+    #162033 30%,
+    #1a2740 60%,
     #0f172a 100%
   );
   z-index: -2;
