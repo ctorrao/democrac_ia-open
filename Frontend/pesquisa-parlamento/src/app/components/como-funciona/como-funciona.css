@@ -2,20 +2,27 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 1rem;
-  font-family: Arial, sans-serif;
-  color: #333;
-  line-height: 1.5;
+  font-family: Roboto, Arial, sans-serif;
+  color: #cbd5e1;
+  line-height: 1.6;
 }
 
 .topo-titulo {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     color: white;
 }
 
 .topo-titulo h1 {
   margin: 0;
-  font-size: 4rem;
+  font-size: 3.5rem;
+  background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+  padding-top: 8px;
 }
 
 
@@ -24,26 +31,33 @@
 }
 
 .secao h2 {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
   color: #ffffff;
-  border-bottom: 2px solid #93b0c4;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding-bottom: 0.5rem;
 }
 
 .cartao {
-  background: #0f172a; 
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   color: #e2e8f0; 
-  border-radius: 4px;
+  border-radius: 16px;
   padding: 2rem;
   margin-bottom: 1rem;
-  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: border-color 0.2s ease;
+}
+
+.cartao:hover {
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .cartao h3 {
   margin-top: 0;
   font-size: 1.3rem;
-  color: #dcdcee;
+  color: #e2e8f0;
 }
 
 ul {
@@ -62,5 +76,5 @@ p {
 img {
   background-color: white;
   padding: 5px;
-  border-radius: 15px;
+  border-radius: 12px;
 }

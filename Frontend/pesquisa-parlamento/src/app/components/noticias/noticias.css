@@ -1,5 +1,7 @@
 .base {
   padding: 40px 100px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .header {
@@ -9,14 +11,22 @@
 }
 
 .header h1 {
-  font-size: 4.5em;
-  margin-bottom: 34px;
+  font-size: 4em;
+  margin-bottom: 10px;
   font-weight: 700;
+  background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+  padding-top: 8px;
 }
 
 .subtitle {
   font-size: 1.05em;
-  opacity: 0.7;
+  opacity: 0.6;
+  letter-spacing: 0.3px;
 }
 
 .loading-box {
@@ -28,7 +38,7 @@
 .spinner {
   width: 44px;
   height: 44px;
-  border: 3px solid rgba(255,255,255,0.1);
+  border: 3px solid rgba(255,255,255,0.08);
   border-top: 3px solid #4be464;
   border-radius: 50%;
   animation: spin 0.9s linear infinite;
@@ -47,36 +57,43 @@
 
 .layout {
   display: flex;
-  gap: 32px;
+  gap: 28px;
   align-items: flex-start;
+  animation: fadeSlideUp 0.4s ease-out;
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .resumo-destaque {
   flex: 0 0 30%;
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 20px;
-  padding: 36px 48px;
-  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(4px);
+  padding: 32px 40px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   position: sticky;
-  top: 24px;
+  top: 90px;
 }
 
 .resumo-topo {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   flex-wrap: wrap;
 }
 
 .live-dot {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: #4be464;
-  box-shadow: 0 0 10px #4be464;
+  box-shadow: 0 0 8px rgba(75, 228, 100, 0.6);
   animation: pulse 2s ease-in-out infinite;
   flex-shrink: 0;
 }
@@ -87,32 +104,32 @@
 }
 
 .resumo-label {
-  font-size: 0.85em;
+  font-size: 0.8em;
   font-weight: 700;
   color: #4be464;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.08em;
 }
 
 .atualizado {
-  font-size: 0.82em;
-  color: #94a3b8;
+  font-size: 0.8em;
+  color: #64748b;
   margin-left: auto;
 }
 
 .resumo-markdown {
-  line-height: 1.85;
-  font-size: 1.25em;
-  color: #e2e8f0;
+  line-height: 1.8;
+  font-size: 1.15em;
+  color: #cbd5e1;
 }
 
 .resumo-markdown ::ng-deep h1,
 .resumo-markdown ::ng-deep h2,
 .resumo-markdown ::ng-deep h3 {
-  color: #f1f5f9;
-  font-size: 1.1em;
+  color: #e2e8f0;
+  font-size: 1.05em;
   font-weight: 700;
-  margin: 16px 0 6px;
+  margin: 14px 0 6px;
   break-after: avoid;
 }
 
@@ -145,7 +162,7 @@
   min-width: 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 4px;
+  gap: 2px;
   align-content: start;
 }
 
@@ -153,17 +170,18 @@
   display: flex;
   align-items: flex-start;
   gap: 14px;
-  padding: 14px 16px;
-  border-radius: 10px;
+  padding: 16px 18px;
+  border-radius: 12px;
   text-decoration: none;
   color: inherit;
-  transition: background 0.15s;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
 }
 
 .item:hover {
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.06);
 }
-
 
 .item-rank {
   font-size: 1.1em;
@@ -179,29 +197,34 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
   min-width: 0;
 }
 
 .item-fonte {
-  font-size: 0.8em;
+  font-size: 0.75em;
   font-weight: 700;
   color: #4be464;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
 }
 
 .item-titulo {
   margin: 0;
-  font-size: 1.05em;
+  font-size: 1em;
   font-weight: 600;
   line-height: 1.5;
-  color: #f1f5f9;
+  color: #e2e8f0;
+  transition: color 0.15s ease;
+}
+
+.item:hover .item-titulo {
+  color: #ffffff;
 }
 
 .item-data {
-  font-size: 0.85em;
-  color: #94a3b8;
+  font-size: 0.82em;
+  color: #64748b;
 }
 
 

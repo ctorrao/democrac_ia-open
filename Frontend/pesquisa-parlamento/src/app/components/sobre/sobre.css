@@ -2,41 +2,54 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 1rem;
-  font-family: Arial, sans-serif;
-  color: #333;
-  line-height: 1.5;
+  font-family: Roboto, Arial, sans-serif;
+  color: #cbd5e1;
+  line-height: 1.6;
 }
 .topo-titulo {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     color: white;
 }
 .topo-titulo h1 {
   margin: 0;
-  font-size: 4rem;
+  font-size: 3.5rem;
+  background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+  padding-top: 8px;
 }
 .secao {
   margin-bottom: 2rem;
 }
 .secao h2 {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
   color: #ffffff;
-  border-bottom: 2px solid #93b0c4;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding-bottom: 0.5rem;
 }
 .cartao {
-  background: #0f172a; 
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   color: #e2e8f0; 
-  border-radius: 4px;
+  border-radius: 16px;
   padding: 2rem;
   margin-bottom: 1rem;
-  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: border-color 0.2s ease;
+}
+.cartao:hover {
+  border-color: rgba(255, 255, 255, 0.1);
 }
 .cartao h3 {
   margin-top: 0;
   font-size: 1.3rem;
-  color: #dcdcee;
+  color: #e2e8f0;
 }
 ul {
   margin: 0.5rem 0;
@@ -51,7 +64,7 @@ p {
 img {
   background-color: white;
   padding: 5px;
-  border-radius: 15px;
+  border-radius: 12px;
 }
 
 
@@ -65,15 +78,22 @@ img {
 
 .cartao-estatistica {
   padding: 1.5rem;
-  background: rgba(30, 41, 59, 0.7);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(30, 41, 59, 0.5);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.cartao-estatistica:hover {
+  border-color: rgba(75, 228, 100, 0.2);
+  transform: translateY(-2px);
 }
 
 .numero-estatistica {
   margin: 0;
   font-size: 2.5rem;
-  color: #75ea66;
+  color: #4be464;
+  font-weight: 700;
 }
 
 .rotulo-estatistica {
@@ -85,13 +105,15 @@ img {
 .contentor-tabela {
   margin: 1rem 0;
   overflow-x: auto;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 
 .tabela-estatisticas {
   width: 100%;
   border-collapse: collapse;
-  background: rgba(30, 41, 59, 0.5);
+  background: rgba(30, 41, 59, 0.4);
 }
 
 .tabela-estatisticas thead tr {
@@ -100,9 +122,12 @@ img {
 
 .tabela-estatisticas th {
   padding: 0.75rem;
-  border-bottom: 2px solid #4ba259;
-  color: #75ea66;
+  border-bottom: 1px solid rgba(75, 228, 100, 0.2);
+  color: #4be464;
   font-weight: 600;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .tabela-estatisticas th.alinhar-direita {
@@ -110,16 +135,16 @@ img {
 }
 
 .tabela-estatisticas tbody tr {
-  transition: background 0.2s;
+  transition: background 0.15s ease;
 }
 
 .tabela-estatisticas tbody tr:hover {
-  background: rgba(75, 162, 89, 0.1);
+  background: rgba(75, 228, 100, 0.06);
 }
 
 .tabela-estatisticas td {
   padding: 0.75rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
   color: #cbd5e1;
 }
 
@@ -137,18 +162,24 @@ img {
 
 .tag-palavra {
   padding: 0.5rem 1rem;
-  background: rgba(75, 234, 102, 0.15);
-  border: 1px solid #75ea66;
+  background: rgba(75, 228, 100, 0.08);
+  border: 1px solid rgba(75, 228, 100, 0.2);
   border-radius: 20px;
   font-size: 0.9rem;
   color: #cbd5e1;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.tag-palavra:hover {
+  border-color: rgba(75, 228, 100, 0.4);
+  background: rgba(75, 228, 100, 0.12);
 }
 
 
 .nota-estatisticas {
   margin-top: 2rem;
   font-style: italic;
-  color: #94a3b8;
+  color: #64748b;
   font-size: 0.9rem;
 }
 

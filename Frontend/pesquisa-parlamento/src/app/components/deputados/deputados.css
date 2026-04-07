@@ -1,33 +1,45 @@
 .base {
   margin: 0 auto;
   padding: 40px 100px;
+  max-width: 1400px;
 }
 
 .header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   color: white;
 }
 
 .header h1 {
-  font-size: 4.5em;
-  margin-bottom: 34px;
+  font-size: 4em;
+  margin-bottom: 10px;
   font-weight: 700;
+  background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+  padding-top: 8px;
 }
 
 .subtitle {
   font-size: 1.1em;
-  opacity: 0.9;
+  opacity: 0.7;
+  letter-spacing: 0.3px;
 }
 
 .pesquisa {
   margin: 0 auto;
-  max-width: 850px;
-  background: #0f172a;
+  max-width: 900px;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   color: #e2e8f0;
-  padding: 30px;
+  padding: 28px;
   border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   margin-bottom: 30px;
 }
 
@@ -36,6 +48,8 @@
   gap: 15px;
   align-items: flex-start;
   padding: 5px;
+  width: 100%;
+  margin-bottom: 16px;
 }
 
 mat-form-field {
@@ -43,12 +57,12 @@ mat-form-field {
 }
 
 .spinner {
-  width: 50px;
-  height: 50px;
-  border: 4px solid #f3f3f3;
-  border-top: 4px solid #4be464;
+  width: 44px;
+  height: 44px;
+  border: 3px solid rgba(255, 255, 255, 0.08);
+  border-top: 3px solid #4be464;
   border-radius: 50%;
-  animation: spin 1s linear infinite;
+  animation: spin 0.9s linear infinite;
   margin: 0 auto 20px;
 }
 
@@ -60,28 +74,51 @@ mat-form-field {
 .area-resposta {
   margin: 0 auto;
   padding: 40px;
-  background: #0f172a;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-radius: 20px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
   max-width: 80%;
   color: #e2e8f0;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  animation: fadeSlideUp 0.4s ease-out;
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .font-link {
   color: #60a5fa;
   font-weight: 600;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.font-link:hover {
+  color: #93bbfc;
 }
 
 /* ==================== TABELA ==================== */
 .area-tabela {
   margin: 30px auto;
-  padding: 40px;
-  background: #0f172a;
+  padding: 36px;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-radius: 20px;
   max-width: 90%;
   color: #e2e8f0;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  animation: fadeSlideUp 0.4s ease-out;
+}
+
+.area-tabela h1 {
+  font-size: 1.6em;
+  font-weight: 600;
+  margin-bottom: 4px;
 }
 
 .area-tabela p {
@@ -90,10 +127,11 @@ mat-form-field {
 }
 
 .tabela-deputado td ::ng-deep .destaca-texto {
-  background: #facc15;
+  background: rgba(250, 204, 21, 0.9);
   color: #0f172a;
-  padding: 1px 3px;
+  padding: 1px 4px;
   border-radius: 3px;
+  font-weight: 500;
 }
 
 .filtros-tabela {
@@ -110,40 +148,52 @@ mat-form-field {
 .botao-filtrar {
   background-color: #0a725c;
   color: white;
+  transition: background-color 0.15s ease;
+}
+
+.botao-filtrar:hover {
+  background-color: #0b8068;
 }
 
 .tabela-container {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  border-radius: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .tabela-deputado {
   width: 100%;
   border-collapse: collapse;
-  background: rgba(30, 41, 59, 0.5);
+  background: rgba(30, 41, 59, 0.4);
   table-layout: fixed;
 }
 
 .tabela-deputado th {
-  padding: 22px;
+  padding: 16px 14px;
   text-align: left;
-  color: #75ea66;
+  color: #4be464;
   font-weight: 600;
-  border-bottom: 2px solid #4ba259;
-  font-size: 1.4em;
+  border-bottom: 1px solid rgba(75, 228, 100, 0.2);
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .tabela-deputado td {
-  padding: 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
   color: #cbd5e1;
-  font-size: 1.1em;
+  font-size: 1em;
   vertical-align: top;
 }
 
+.tabela-deputado tbody tr {
+  transition: background 0.15s ease;
+}
+
 .tabela-deputado tbody tr:hover {
-  background: rgba(75, 162, 89, 0.1);
+  background: rgba(75, 228, 100, 0.06);
 }
 
 .tabela-deputado th:nth-child(1),
@@ -165,8 +215,10 @@ mat-form-field {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-  margin-top: 20px;
+  gap: 16px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .paginacao button:disabled {
@@ -176,6 +228,8 @@ mat-form-field {
 
 .info-paginacao {
   color: #94a3b8;
+  font-size: 0.95em;
+  font-variant-numeric: tabular-nums;
 }
 
 .filtro-texto {
@@ -196,7 +250,7 @@ mat-form-field {
 
   .pesquisa {
     max-width: none;
-    padding: 15px;
+    padding: 20px;
   }
 
   .header h1 {
@@ -206,13 +260,13 @@ mat-form-field {
   .area-resposta {
     max-width: 100%;
     padding: 20px;
-    border-radius: 12px;
+    border-radius: 14px;
   }
 
   .area-tabela {
     max-width: 100%;
-    padding: 15px;
-    border-radius: 12px;
+    padding: 16px;
+    border-radius: 14px;
   }
 
   .filtros-tabela {
@@ -226,7 +280,7 @@ mat-form-field {
 
   .tabela-deputado th {
     padding: 10px 6px;
-    font-size: 0.85em;
+    font-size: 0.8em;
   }
 
   .tabela-deputado td {
@@ -265,22 +319,6 @@ mat-form-field {
   }
 }
 
-.pesquisa {
-  margin: 0 auto;
-  max-width: 900px;
-  background: #0f172a;
-  color: #e2e8f0;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-  margin-bottom: 30px;
-}
-
-.deputados-lista {
-  width: 100%;
-  margin-bottom: 16px;
-}
-
 .quiz-banner {
   display: flex;
   align-items: center;
@@ -288,17 +326,19 @@ mat-form-field {
   padding: 16px 20px;
   margin-top: 20px;
   margin-bottom: 12px;
-  background: rgba(75, 228, 100, 0.06);
-  border: 1px solid rgba(75, 228, 100, 0.25);
+  background: rgba(75, 228, 100, 0.05);
+  border: 1px solid rgba(75, 228, 100, 0.15);
   border-radius: 14px;
   text-decoration: none;
   color: #e2e8f0;
-  transition: background 0.15s, border-color 0.15s;
+  transition: all 0.2s ease;
 }
 
 .quiz-banner:hover {
-  background: rgba(75, 228, 100, 0.12);
-  border-color: rgba(75, 228, 100, 0.45);
+  background: rgba(75, 228, 100, 0.1);
+  border-color: rgba(75, 228, 100, 0.35);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(75, 228, 100, 0.1);
 }
 
 .quiz-banner-icon {
@@ -327,6 +367,11 @@ mat-form-field {
   font-size: 1.3em;
   color: #4be464;
   flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.quiz-banner:hover .quiz-banner-seta {
+  transform: translateX(3px);
 }
 
 .info-cards {
@@ -340,12 +385,12 @@ mat-form-field {
   align-items: flex-start;
   gap: 10px;
   padding: 14px 16px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 12px;
-  font-size: 1em;
-  color: #f1f4f8;
-  line-height: 1.5;
+  font-size: 0.95em;
+  color: #cbd5e1;
+  line-height: 1.55;
 }
 
 .info-icon {
